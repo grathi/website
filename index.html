@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TeeStats — Your AI Golf Companion</title>
+  <meta name="description" content="Track rounds, analyze your swing, play along with friends, and lower your handicap with AI-powered insights." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-icon">⛳</span>
+        <span class="nav-logo-text">TeeStats</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#play-along">Play Along</a></li>
+        <li><a href="#ai">AI Insights</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+      <a href="#download" class="btn btn-primary btn-sm">Get the App</a>
+      <!-- Theme toggle -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme">
+        <!-- Sun (shown in dark mode) -->
+        <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0-13a1 1 0 0 0 1-1V2a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm0 16a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Zm9-9h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2ZM4 12a1 1 0 0 0-1-1H2a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm14.66-7.07-1.41 1.41a1 1 0 0 0 1.41 1.41l1.41-1.41a1 1 0 1 0-1.41-1.41ZM5.75 17.66l-1.41 1.41a1 1 0 1 0 1.41 1.41l1.41-1.41a1 1 0 1 0-1.41-1.41Zm12.92 1.41 1.41-1.41a1 1 0 1 0-1.41-1.41l-1.41 1.41a1 1 0 0 0 1.41 1.41ZM5.75 6.34 4.34 4.93a1 1 0 1 0-1.41 1.41l1.41 1.41a1 1 0 0 0 1.41-1.41Z"/>
+        </svg>
+        <!-- Moon (shown in light mode) -->
+        <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Z"/>
+        </svg>
+      </button>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#features">Features</a>
+      <a href="#play-along">Play Along</a>
+      <a href="#ai">AI Insights</a>
+      <a href="#download">Download</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-content" data-animate>
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          AI-Powered Golf Companion
+        </div>
+        <h1 class="hero-title">
+          Play smarter.<br />
+          <span class="text-gradient">Score lower.</span>
+        </h1>
+        <p class="hero-sub">
+          Track every round, get Gemini AI analysis after each hole, challenge friends to live multiplayer rounds, and watch your handicap drop.
+        </p>
+        <div class="hero-cta">
+          <a href="https://apps.apple.com/us/app/teestats-golf-analytics/id6760884251" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.78 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
+            App Store
+          </a>
+          <a href="#" class="btn btn-secondary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+            Google Play
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">50K+</span>
+            <span class="hero-stat-lbl">Rounds Tracked</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">4.9★</span>
+            <span class="hero-stat-lbl">App Store Rating</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">Free</span>
+            <span class="hero-stat-lbl">Always Free</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-mockup" data-animate data-delay="200">
+        <div class="phone-wrap">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <img src="assets/images/screenshot-2.png"
+                   srcset="assets/images/screenshot-2.png 2x"
+                   alt="TeeStats App" />
+            </div>
+            <div class="phone-glow"></div>
+          </div>
+        </div>
+        <div class="phone-shadow-duo"></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ── Trust bar ── -->
+  <div class="trust-bar" data-animate>
+    <div class="container trust-inner">
+      <span class="trust-label">Trusted by golfers worldwide</span>
+      <div class="trust-items">
+        <div class="trust-item">⛳ iPhone &amp; Android</div>
+        <div class="trust-item">🌍 Available Globally</div>
+        <div class="trust-item">🤖 Gemini AI Powered</div>
+        <div class="trust-item">🔒 Private &amp; Secure</div>
+        <div class="trust-item">💳 100% Free</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Features grid ── -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="section-eyebrow">Everything you need</div>
+        <h2 class="section-title">Your complete golf toolkit</h2>
+        <p class="section-sub">From the first tee to the 19th hole, TeeStats has every stat, insight, and social tool to elevate your game.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card feature-card-large" data-animate>
+          <div class="feature-card-icon-wrap" style="--clr: #5A9E1F">
+            <span>🤝</span>
+          </div>
+          <h3>Play Along with Friends</h3>
+          <p>Invite up to 3 friends to a live multiplayer round. Everyone scores on their own phone — see who's winning in real time on a shared leaderboard when the round ends.</p>
+          <a href="#play-along" class="feature-link">Learn more →</a>
+        </div>
+
+        <div class="feature-card feature-card-large" data-animate data-delay="100">
+          <div class="feature-card-icon-wrap" style="--clr: #6366F1">
+            <span>✨</span>
+          </div>
+          <h3>AI Round Summary</h3>
+          <p>After every round, Gemini AI breaks down your strengths, weaknesses, and a personalised focus area to improve — plus an estimated calorie burn.</p>
+          <a href="#ai" class="feature-link">Learn more →</a>
+        </div>
+
+        <div class="feature-card" data-animate>
+          <div class="feature-card-icon-wrap" style="--clr: #F59E0B">
+            <span>📊</span>
+          </div>
+          <h3>Handicap Tracking</h3>
+          <p>USGA-formula handicap index updated after every round. Track your trend over time and set a goal handicap to beat.</p>
+        </div>
+
+        <div class="feature-card" data-animate data-delay="100">
+          <div class="feature-card-icon-wrap" style="--clr: #EC4899">
+            <span>🏌️</span>
+          </div>
+          <h3>Swing Analyzer</h3>
+          <p>Upload any swing video. Gemini AI traces the ball flight, overlays a live tracer, and reports carry distance, launch angle, and height.</p>
+        </div>
+
+        <div class="feature-card" data-animate data-delay="200">
+          <div class="feature-card-icon-wrap" style="--clr: #14B8A6">
+            <span>📍</span>
+          </div>
+          <h3>Nearby Courses</h3>
+          <p>Discover golf courses near you. Tap any course to pre-fill the scorecard and start a round instantly — no typing needed.</p>
+        </div>
+
+        <div class="feature-card" data-animate data-delay="300">
+          <div class="feature-card-icon-wrap" style="--clr: #8B5CF6">
+            <span>⚡</span>
+          </div>
+          <h3>Smart Notifications</h3>
+          <p>Personalised nudges based on your play patterns — streak reminders, personal best alerts, and daily golf tips from the AI coach.</p>
+        </div>
+
+        <div class="feature-card" data-animate data-delay="100">
+          <div class="feature-card-icon-wrap" style="--clr: #EF4444">
+            <span>🏆</span>
+          </div>
+          <h3>Friends Leaderboard</h3>
+          <p>Compare handicaps, average scores, and birdies with your golf group. See who's the best putter in your circle.</p>
+        </div>
+
+        <div class="feature-card" data-animate data-delay="200">
+          <div class="feature-card-icon-wrap" style="--clr: #0EA5E9">
+            <span>☁️</span>
+          </div>
+          <h3>Live Weather</h3>
+          <p>Real-time weather at your course during every round. Wind speed, temperature, and conditions — all synced to your location.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Play Along spotlight ── -->
+  <section class="spotlight" id="play-along">
+    <div class="container spotlight-inner">
+      <div class="spotlight-visual" data-animate>
+        <div class="spotlight-phones">
+          <div class="spotlight-phone spotlight-phone-back">
+            <div class="sp-screen sp-screen-green">
+              <div class="sp-header">
+                <div class="sp-dot sp-dot-green"></div>
+                <span>Arpit Kumar</span>
+              </div>
+              <div class="sp-score">+3</div>
+              <div class="sp-holes">Hole 14 of 18</div>
+            </div>
+          </div>
+          <div class="spotlight-phone spotlight-phone-front">
+            <div class="sp-screen sp-screen-dark">
+              <div class="sp-header">
+                <div class="sp-dot sp-dot-gold"></div>
+                <span>You</span>
+              </div>
+              <div class="sp-score sp-score-gold">-1</div>
+              <div class="sp-holes">Hole 14 of 18</div>
+              <div class="sp-pill">🏆 Leading</div>
+            </div>
+          </div>
+        </div>
+        <div class="spotlight-invite-card" data-animate data-delay="300">
+          <div style="font-size:28px">⛳</div>
+          <div>
+            <div style="font-weight:700;font-size:14px" class="invite-card-title">Vasu joined your round!</div>
+            <div style="font-size:12px" class="invite-card-sub">Augusta National · 18 holes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spotlight-content" data-animate data-delay="150">
+        <div class="section-eyebrow">Multiplayer</div>
+        <h2 class="section-title">Play Along<br/>with Friends</h2>
+        <p class="section-sub" style="text-align:left">Golf is better with company. Invite up to 3 friends before you tee off — they get a push notification, tap to join, and start scoring on their own phone.</p>
+        <ul class="spotlight-list">
+          <li>
+            <div class="spotlight-list-icon">🔔</div>
+            <div>
+              <strong>Instant invite</strong>
+              <span>Friends get a push notification the moment you send the invite.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon">📱</div>
+            <div>
+              <strong>Score independently</strong>
+              <span>Each player tracks their own round on their own device. No sharing required.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon">🏆</div>
+            <div>
+              <strong>Live leaderboard</strong>
+              <span>When everyone finishes, a ranked results screen shows who came out on top.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon">👋</div>
+            <div>
+              <strong>No pressure</strong>
+              <span>Friends can decline or ignore — your round continues perfectly without them.</span>
+            </div>
+          </li>
+        </ul>
+        <a href="#download" class="btn btn-primary" style="margin-top:12px">Start playing →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AI Summary spotlight ── -->
+  <section class="spotlight spotlight-flip" id="ai">
+    <div class="container spotlight-inner">
+      <div class="spotlight-content" data-animate>
+        <div class="section-eyebrow" style="color:#818CF8">Powered by Gemini AI</div>
+        <h2 class="section-title">Your personal<br/><span class="text-gradient-purple">AI coach</span></h2>
+        <p class="section-sub" style="text-align:left">After every round, Gemini analyses your performance hole by hole and gives you a personalised breakdown — written like a message from a pro coach, not a spreadsheet.</p>
+        <ul class="spotlight-list">
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(99,102,241,0.15);color:#818CF8">✍️</div>
+            <div>
+              <strong>Personalised headline</strong>
+              <span>A one-line summary that captures the story of your round.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(99,102,241,0.15);color:#818CF8">💪</div>
+            <div>
+              <strong>Strength &amp; weakness</strong>
+              <span>What you did well and one thing to improve before your next round.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(99,102,241,0.15);color:#818CF8">🎯</div>
+            <div>
+              <strong>Focus area</strong>
+              <span>A single concrete drill or mindset shift to practice this week.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(99,102,241,0.15);color:#818CF8">🔥</div>
+            <div>
+              <strong>Calorie estimate</strong>
+              <span>Approximate calories burned based on course length and your round duration.</span>
+            </div>
+          </li>
+        </ul>
+        <a href="#download" class="btn btn-primary btn-purple" style="margin-top:12px">Try AI coaching →</a>
+      </div>
+
+      <div class="spotlight-visual ai-visual" data-animate data-delay="200">
+        <div class="ai-card">
+          <div class="ai-card-header">
+            <span style="font-size:18px">✨</span>
+            <span style="font-weight:600;font-size:14px" class="ai-card-title">AI Round Summary</span>
+            <span class="gemini-badge">Gemini</span>
+          </div>
+          <div class="ai-divider"></div>
+          <div class="ai-headline">"Iron game clicked today — converted 4 GIRs you'd normally miss."</div>
+          <div class="ai-body">Your approach play stood out. Three back-nine shots landed inside 10 feet, setting up birdie looks you capitalised on. Focus this week on the same tempo on downhill putts.</div>
+          <div class="ai-chips">
+            <div class="ai-chip ai-chip-green">
+              <div class="ai-chip-label">💪 Strength</div>
+              <div class="ai-chip-value">Iron accuracy</div>
+            </div>
+            <div class="ai-chip ai-chip-purple">
+              <div class="ai-chip-label">⚠️ Weakness</div>
+              <div class="ai-chip-value">Downhill putts</div>
+            </div>
+          </div>
+          <div class="ai-chip ai-chip-full">
+            <div class="ai-chip-label">🎯 Focus Area</div>
+            <div class="ai-chip-value">Practice 10-ft downhill putts on a slope — 20 reps before next round</div>
+          </div>
+          <div class="ai-calorie">🔥 Estimated 487 kcal burned</div>
+        </div>
+        <div class="ai-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats section ── -->
+  <section class="stats-section" data-animate>
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num" data-count="50000">0</div>
+          <div class="stat-label">Rounds Tracked</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-count="12000">0</div>
+          <div class="stat-label">Active Golfers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-count="3">0</div>
+          <div class="stat-label">Avg Handicap Drop</div>
+          <div class="stat-suffix">strokes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4.9</div>
+          <div class="stat-label">App Store Rating</div>
+          <div class="stat-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Download CTA ── -->
+  <section class="download" id="download">
+    <div class="download-bg">
+      <div class="download-orb download-orb-1"></div>
+      <div class="download-orb download-orb-2"></div>
+    </div>
+    <div class="container download-inner" data-animate>
+      <div class="download-badge">Available Now</div>
+      <h2 class="download-title">Ready to lower<br/>your handicap?</h2>
+      <p class="download-sub">Free on iPhone and Android. No subscription. No ads. Just golf.</p>
+      <div class="download-buttons">
+        <a href="https://apps.apple.com/us/app/teestats-golf-analytics/id6760884251" class="store-btn store-btn-apple" target="_blank" rel="noopener">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.78 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
+          <div>
+            <div class="store-btn-sub">Download on the</div>
+            <div class="store-btn-main">App Store</div>
+          </div>
+        </a>
+        <a href="#" class="store-btn store-btn-google">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+          <div>
+            <div class="store-btn-sub">Get it on</div>
+            <div class="store-btn-main">Google Play</div>
+          </div>
+        </a>
+      </div>
+      <p class="download-note">⛳ Join thousands of golfers already tracking with TeeStats</p>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <span class="nav-logo-icon">⛳</span>
+          <span class="nav-logo-text">TeeStats</span>
+        </a>
+        <p>Your AI-powered golf companion. Track, improve, and play together.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <div class="footer-col-title">App</div>
+          <a href="#features">Features</a>
+          <a href="#play-along">Play Along</a>
+          <a href="#ai">AI Insights</a>
+          <a href="#download">Download</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Legal</div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#" class="open-contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2025 TeeStats. All rights reserved.</span>
+        <span>Made with ❤️ for golfers everywhere</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Contact Modal ── -->
+  <div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal-icon">⛳</div>
+      <h2 class="modal-title" id="modalTitle">Get in Touch</h2>
+      <p class="modal-sub">Questions, feedback, or partnership ideas — we'd love to hear from you.</p>
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="John Smith" autocomplete="name" required />
+            <span class="form-error">Please enter your name</span>
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="john@example.com" autocomplete="email" required />
+            <span class="form-error">Please enter a valid email</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-subject">Subject</label>
+          <select id="cf-subject" name="subject">
+            <option value="General Enquiry">General Enquiry</option>
+            <option value="Bug Report">Bug Report</option>
+            <option value="Feature Request">Feature Request</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Press">Press</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="4" placeholder="Tell us what's on your mind..." required></textarea>
+          <span class="form-error">Please enter a message</span>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21L23 12 2 3v7l15 2-15 2v7z"/></svg>
+          Send Message
+        </button>
+      </form>
+      <p class="modal-note">Sends via your mail app to <strong>no-reply@teestats.app</strong></p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
