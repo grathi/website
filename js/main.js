@@ -257,6 +257,95 @@
 
 
   /* ----------------------------------------------------------
+     App Screenshots Carousel
+  ---------------------------------------------------------- */
+  const track     = document.getElementById('carouselTrack');
+  const dotsWrap  = document.getElementById('carouselDots');
+  const prevBtn   = document.getElementById('carouselPrev');
+  const nextBtn   = document.getElementById('carouselNext');
+
+  if (track && dotsWrap) {
+    let current    = 0;
+    let autoTimer  = null;
+    const slides   = track.querySelectorAll('.carousel-slide');
+    const dots     = dotsWrap.querySelectorAll('.carousel-dot');
+    const total    = slides.length;
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    function startAuto() {
+      autoTimer = setInterval(() => goTo(current + 1), 4000);
+    }
+
+    function stopAuto() {
+      clearInterval(autoTimer);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        stopAuto();
+        goTo(parseInt(dot.dataset.index, 10));
+        startAuto();
+      });
+    });
+
+    // Pause on hover
+    track.addEventListener('mouseenter', stopAuto);
+    track.addEventListener('mouseleave', startAuto);
+
+    // Touch swipe support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) {
+        stopAuto();
+        goTo(diff > 0 ? current + 1 : current - 1);
+        startAuto();
+      }
+    }, { passive: true });
+
+    startAuto();
+  }
+
+
+  /* ----------------------------------------------------------
+     FAQ Accordion
+  ---------------------------------------------------------- */
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const item    = this.closest('.faq-item');
+      const answer  = item.querySelector('.faq-a');
+      const icon    = this.querySelector('.faq-icon');
+      const isOpen  = item.classList.contains('open');
+
+      // Close all others
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-a').style.maxHeight = null;
+        openItem.querySelector('.faq-q .faq-icon').textContent = '+';
+        openItem.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle current
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.textContent = '×';
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+
+  /* ----------------------------------------------------------
      App Store / Google Play buttons: ripple effect on click
   ---------------------------------------------------------- */
   document.querySelectorAll('.store-btn').forEach(btn => {

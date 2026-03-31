@@ -139,6 +139,59 @@
     </div>
   </div>
 
+  <!-- ── App Screenshots Carousel ── -->
+  <section class="screenshots" id="screenshots">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="section-eyebrow">See it in action</div>
+        <h2 class="section-title">Built for every golfer</h2>
+        <p class="section-sub">From the first tee box to your AI round summary — here's what TeeStats looks like on your phone.</p>
+      </div>
+      <div class="carousel-wrap" data-animate data-delay="100">
+        <div class="carousel">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+              <div class="carousel-phone">
+                <div class="carousel-phone-frame">
+                  <div class="carousel-phone-notch"></div>
+                  <div class="carousel-phone-screen">
+                    <img src="assets/images/screenshot-1.png" alt="TeeStats Scorecard Screen" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-caption">
+                <div class="carousel-caption-tag">Live Scorecard</div>
+                <div class="carousel-caption-title">Track every stroke in real time</div>
+                <div class="carousel-caption-sub">Score hole by hole, see your running total, and get instant AI commentary after each hole.</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="carousel-phone">
+                <div class="carousel-phone-frame">
+                  <div class="carousel-phone-notch"></div>
+                  <div class="carousel-phone-screen">
+                    <img src="assets/images/screenshot-2.png" alt="TeeStats Round Details Screen" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-caption">
+                <div class="carousel-caption-tag">Round Stats</div>
+                <div class="carousel-caption-title">Deep stats after every round</div>
+                <div class="carousel-caption-sub">GIR, fairways hit, putts per hole, score distribution, and your handicap trend — all in one screen.</div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous slide">‹</button>
+          <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next slide">›</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots">
+          <button class="carousel-dot active" data-index="0" aria-label="Slide 1"></button>
+          <button class="carousel-dot" data-index="1" aria-label="Slide 2"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Features grid ── -->
   <section class="features" id="features">
     <div class="container">
@@ -233,6 +286,46 @@
           <p>Real-time weather at your course during every round. Wind speed, temperature, and conditions — all synced to your location.</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How It Works ── -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="section-eyebrow">Simple by design</div>
+        <h2 class="section-title">Up and playing in 60 seconds</h2>
+        <p class="section-sub">No tutorials, no setup fee. Just four taps and you're on the first tee.</p>
+      </div>
+      <div class="steps-row" data-animate data-delay="100">
+        <div class="step">
+          <div class="step-icon-wrap" style="--clr: #0EA5E9">📍</div>
+          <div class="step-num">1</div>
+          <div class="step-title">Find your course</div>
+          <div class="step-desc">Search by name or use GPS. Hole data loads instantly for thousands of courses worldwide.</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-icon-wrap" style="--clr: #10B981">📷</div>
+          <div class="step-num">2</div>
+          <div class="step-title">Upload scorecard if new</div>
+          <div class="step-desc">Snap the paper scorecard once. AI reads all 18 holes and saves it for every future round.</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-icon-wrap" style="--clr: #5A9E1F">⛳</div>
+          <div class="step-num">3</div>
+          <div class="step-title">Start &amp; invite friends</div>
+          <div class="step-desc">Tap Tee Off and optionally invite up to 3 friends. Everyone scores on their own phone.</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-icon-wrap" style="--clr: #6366F1">✨</div>
+          <div class="step-num">4</div>
+          <div class="step-title">Get AI insights</div>
+          <div class="step-desc">After the round, Gemini analyses your play and delivers a personalised coaching summary.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -632,6 +725,79 @@
     </div>
   </section>
 
+  <!-- ── Testimonials ── -->
+  <section class="testimonials" id="testimonials">
+    <!-- Golf scene background (existing CSS, first use in HTML) -->
+    <div class="golf-scene golf-scene-golden" aria-hidden="true">
+      <div class="gs-sky"></div>
+      <div class="gs-sun"><div class="gs-sun-rays"></div></div>
+      <div class="gs-clouds">
+        <div class="gs-cloud gs-cloud-1"></div>
+        <div class="gs-cloud gs-cloud-2"></div>
+        <div class="gs-cloud gs-cloud-3"></div>
+      </div>
+      <div class="gs-hills">
+        <div class="gs-hills-far"></div>
+        <div class="gs-hills-mid"></div>
+      </div>
+      <div class="gs-water"><div class="gs-water-shimmer"></div></div>
+      <div class="gs-fairway"></div>
+      <div class="gs-bunker gs-bunker-1"></div>
+      <div class="gs-bunker gs-bunker-2"></div>
+      <div class="gs-green"></div>
+      <div class="gs-flag-pole"><div class="gs-flag"></div></div>
+      <div class="gs-trees">
+        <div class="gs-tree gs-tree-1"></div>
+        <div class="gs-tree gs-tree-2"></div>
+        <div class="gs-tree gs-tree-3"></div>
+        <div class="gs-tree gs-tree-4"></div>
+      </div>
+    </div>
+
+    <div class="container testi-inner">
+      <div class="section-header" data-animate>
+        <div class="section-eyebrow">Loved by golfers</div>
+        <h2 class="section-title">Real rounds. Real results.</h2>
+        <p class="section-sub">Thousands of golfers track every round with TeeStats. Here's what they say.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card" data-animate>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Finally an app that actually understands golf. The AI summary after my round was spot on — pointed out exactly what I already felt but couldn't articulate. Dropped 3 strokes in 2 months."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--av-clr: #5A9E1F">M</div>
+            <div>
+              <div class="testi-name">Marcus T.</div>
+              <div class="testi-meta">Handicap 14 → 11</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card" data-animate data-delay="100">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Play Along with friends is a game changer. We all score on our phones and compare at the end — feels like a proper tournament. The leaderboard reveal is genuinely exciting."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--av-clr: #6366F1">S</div>
+            <div>
+              <div class="testi-name">Sarah K.</div>
+              <div class="testi-meta">Weekly golfer · 5-player group</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card" data-animate data-delay="200">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"The scorecard photo feature saved me at a remote course with no cell signal. Just snapped the card, all 18 holes loaded instantly. Used it for 6 new courses so far — works every time."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="--av-clr: #F59E0B">R</div>
+            <div>
+              <div class="testi-name">Ryan O.</div>
+              <div class="testi-meta">Travels to play · 18 courses tracked</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Stats section ── -->
   <section class="stats-section" data-animate>
     <div class="container">
@@ -654,6 +820,92 @@
           <div class="stat-label">App Store Rating</div>
           <div class="stat-stars">★★★★★</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="section-eyebrow">Questions &amp; answers</div>
+        <h2 class="section-title">Everything you want to know</h2>
+        <p class="section-sub">Quick answers to the most common questions about TeeStats.</p>
+      </div>
+      <div class="faq-list" data-animate data-delay="100">
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Is TeeStats really free? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes — completely free, forever. No subscription, no ads, no hidden fees. All core features including AI round summaries, multiplayer, handicap tracking, swing analyzer, and scorecard OCR are included at zero cost.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Is TeeStats available on Android? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>TeeStats is currently available on iPhone (iOS 16+). An Android version is in active development — join the waitlist via the contact form and we'll notify you the day it launches.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How does the AI round summary work? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>After you finish a round, TeeStats sends your hole-by-hole scores (including pars, yardages, and stroke indices) to Google's Gemini AI. Gemini returns a personalised analysis: a round headline, your key strength, one area to improve, a concrete drill for the week, and an estimated calorie burn based on course length and duration.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How does Play Along with Friends work? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Before teeing off, tap "Invite Friends" and select up to 3 contacts from your TeeStats friend list. They receive an instant push notification to join your round. Each player scores independently on their own device — no sharing required. When everyone finishes, a shared results screen ranks the group.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What if my course isn't in the database? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>When TeeStats can't find hole data for a course, an "Upload Scorecard" prompt appears automatically. Just snap a photo of the paper scorecard — Gemini Vision reads all 18 holes (par, yardage, stroke index, course rating, slope) in about 2 seconds. The course is then saved to our community database so future golfers don't need to upload it again.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Is my golf data private? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Your personal round data (scores, stats, handicap history) is private and only visible to you and friends you explicitly add. Course data uploaded via scorecard OCR is shared anonymously with the community to improve the database. We never sell personal data.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Does TeeStats work offline or in poor signal areas? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes — once a round is started and hole data is loaded, scoring works fully offline. Your scores sync to the cloud automatically when you regain a connection. AI summaries and multiplayer features do require an internet connection.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How is the handicap calculated? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>TeeStats uses the USGA Handicap System formula. After each round, a Score Differential is calculated using your gross score, course rating, and slope rating. Your handicap index is the average of the best 8 Score Differentials from your last 20 rounds, multiplied by 0.96.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
