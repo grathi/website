@@ -64,25 +64,22 @@
   /* ----------------------------------------------------------
      Hamburger menu toggle
   ---------------------------------------------------------- */
-  const hamburger  = document.querySelector('.hamburger');
-  const navLinks   = document.querySelector('.nav-links');
+  const hamburger  = document.getElementById('hamburger');
+  const navMobile  = document.getElementById('navMobile');
 
-  if (hamburger && navLinks) {
+  if (hamburger && navMobile) {
     hamburger.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
+      const isOpen = navMobile.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
       hamburger.setAttribute('aria-expanded', isOpen);
-
-      // Animate the three bars into an X
-      const bars = hamburger.querySelectorAll('.bar');
-      bars.forEach((b, i) => b.classList.toggle('active', isOpen));
     });
 
     // Close menu when a link is tapped on mobile
-    navLinks.querySelectorAll('a').forEach(link => {
+    navMobile.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
+        navMobile.classList.remove('open');
+        hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', false);
-        hamburger.querySelectorAll('.bar').forEach(b => b.classList.remove('active'));
       });
     });
   }
