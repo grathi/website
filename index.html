@@ -24,6 +24,8 @@
       </a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
+        <li><a href="#scorecard-ocr">Scorecard OCR</a></li>
+        <li><a href="#course-finder">Course Finder</a></li>
         <li><a href="#play-along">Play Along</a></li>
         <li><a href="#ai">AI Insights</a></li>
         <li><a href="#download">Download</a></li>
@@ -46,6 +48,8 @@
     </div>
     <div class="nav-mobile" id="navMobile">
       <a href="#features">Features</a>
+      <a href="#scorecard-ocr">Scorecard OCR</a>
+      <a href="#course-finder">Course Finder</a>
       <a href="#play-along">Play Along</a>
       <a href="#ai">AI Insights</a>
       <a href="#download">Download</a>
@@ -172,6 +176,24 @@
         </div>
 
         <div class="feature-card" data-animate data-delay="100">
+          <div class="feature-card-icon-wrap" style="--clr: #10B981">
+            <span>📷</span>
+          </div>
+          <h3>Scorecard OCR</h3>
+          <p>Snap a photo of any physical scorecard. AI reads hole numbers, par, yardage, handicap, and tee ratings — instantly pre-filling your round.</p>
+          <a href="#scorecard-ocr" class="feature-link">See how →</a>
+        </div>
+
+        <div class="feature-card" data-animate data-delay="200">
+          <div class="feature-card-icon-wrap" style="--clr: #0EA5E9">
+            <span>🗺️</span>
+          </div>
+          <h3>Course Finder</h3>
+          <p>Search any golf course by name or let GPS find courses nearby. Hole data loads automatically — or upload your scorecard if it's new.</p>
+          <a href="#course-finder" class="feature-link">Explore →</a>
+        </div>
+
+        <div class="feature-card" data-animate data-delay="300">
           <div class="feature-card-icon-wrap" style="--clr: #EC4899">
             <span>🏌️</span>
           </div>
@@ -211,6 +233,255 @@
           <p>Real-time weather at your course during every round. Wind speed, temperature, and conditions — all synced to your location.</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Scorecard OCR spotlight ── -->
+  <section class="spotlight" id="scorecard-ocr">
+    <div class="container spotlight-inner">
+      <div class="spotlight-visual ocr-visual" data-animate>
+        <div class="ocr-demo-card">
+          <div class="ocr-demo-header">
+            <span class="ocr-demo-tag">📷 Scanning scorecard…</span>
+          </div>
+          <div class="ocr-image-placeholder">
+            <div class="ocr-scan-line"></div>
+            <div class="ocr-grid-preview">
+              <div class="ocr-grid-header">
+                <span>Hole</span><span>Par</span><span>Yds</span><span>HCP</span>
+              </div>
+              <div class="ocr-grid-row ocr-row-reveal" style="--d:0ms"><span>1</span><span>4</span><span>385</span><span>7</span></div>
+              <div class="ocr-grid-row ocr-row-reveal" style="--d:120ms"><span>2</span><span>3</span><span>175</span><span>15</span></div>
+              <div class="ocr-grid-row ocr-row-reveal" style="--d:240ms"><span>3</span><span>5</span><span>530</span><span>3</span></div>
+              <div class="ocr-grid-row ocr-row-reveal" style="--d:360ms"><span>4</span><span>4</span><span>420</span><span>1</span></div>
+              <div class="ocr-grid-row ocr-row-reveal" style="--d:480ms"><span>5</span><span>4</span><span>395</span><span>9</span></div>
+            </div>
+          </div>
+          <div class="ocr-demo-footer">
+            <div class="ocr-pill ocr-pill-green">✓ 18 holes extracted</div>
+            <div class="ocr-pill">Course Rating 72.4 / 131</div>
+          </div>
+        </div>
+        <div class="ocr-badge-float" data-animate data-delay="400">
+          <span>🤖</span>
+          <div>
+            <div class="ocr-badge-title">AI extracted in 2s</div>
+            <div class="ocr-badge-sub">Gemini Vision · Zero typing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spotlight-content" data-animate data-delay="150">
+        <div class="section-eyebrow" style="color:#10B981">Scorecard OCR</div>
+        <h2 class="section-title">Photo to<br/><span class="text-gradient-green">hole data</span></h2>
+        <p class="section-sub" style="text-align:left">Found a course that's not in our database? Just snap the paper scorecard. Gemini AI reads every column and loads all 18 holes — par, yardage, stroke index, and tee ratings — in seconds.</p>
+        <ul class="spotlight-list">
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(16,185,129,0.15);color:#10B981">📷</div>
+            <div>
+              <strong>One photo, full scorecard</strong>
+              <span>Captures all tee boxes, course rating, and slope rating automatically.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(16,185,129,0.15);color:#10B981">✏️</div>
+            <div>
+              <strong>Editable review table</strong>
+              <span>Tap any cell to correct a digit before saving — you're always in control.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(16,185,129,0.15);color:#10B981">☁️</div>
+            <div>
+              <strong>Saved for everyone</strong>
+              <span>Once uploaded, the course is available to all TeeStats users instantly.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(16,185,129,0.15);color:#10B981">🔁</div>
+            <div>
+              <strong>Auto-detected 9-hole courses</strong>
+              <span>If front and back 9 are identical, TeeStats automatically treats it as a 9-hole layout.</span>
+            </div>
+          </li>
+        </ul>
+        <a href="#download" class="btn btn-primary btn-green" style="margin-top:12px">Try it free →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Course Finder spotlight ── -->
+  <section class="spotlight spotlight-flip" id="course-finder">
+    <div class="container spotlight-inner">
+      <div class="spotlight-content" data-animate>
+        <div class="section-eyebrow" style="color:#0EA5E9">Course Finder</div>
+        <h2 class="section-title">Find any course,<br/><span class="text-gradient-blue">start in seconds</span></h2>
+        <p class="section-sub" style="text-align:left">Type a course name or tap "Use My Location" to see every golf course nearby. Hole data loads automatically from our community database — or use Scorecard OCR for courses we haven't seen yet.</p>
+        <ul class="spotlight-list">
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(14,165,233,0.15);color:#0EA5E9">🔍</div>
+            <div>
+              <strong>Search by name or GPS</strong>
+              <span>Smart search finds courses even with partial names or slight spelling variations.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(14,165,233,0.15);color:#0EA5E9">⛳</div>
+            <div>
+              <strong>Pre-loaded hole data</strong>
+              <span>Par, yardage, and stroke index filled in automatically — just pick your tee box and go.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(14,165,233,0.15);color:#0EA5E9">📤</div>
+            <div>
+              <strong>Missing course? Upload the scorecard</strong>
+              <span>Tap the upload prompt, snap a photo, and the course is saved for future rounds.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon" style="background:rgba(14,165,233,0.15);color:#0EA5E9">🌐</div>
+            <div>
+              <strong>Growing community database</strong>
+              <span>Every uploaded scorecard expands the shared library — the more golfers use it, the better it gets.</span>
+            </div>
+          </li>
+        </ul>
+        <a href="#download" class="btn btn-primary btn-blue" style="margin-top:12px">Find your course →</a>
+      </div>
+
+      <div class="spotlight-visual course-finder-visual" data-animate data-delay="200">
+        <div class="cf-card">
+          <div class="cf-search-bar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <span class="cf-search-text">Pebble Beach Golf Links</span>
+            <span class="cf-cursor"></span>
+          </div>
+          <div class="cf-result-list">
+            <div class="cf-result cf-result-active">
+              <div class="cf-result-icon">⛳</div>
+              <div class="cf-result-info">
+                <div class="cf-result-name">Pebble Beach Golf Links</div>
+                <div class="cf-result-sub">Pebble Beach, CA · 18 holes</div>
+              </div>
+              <div class="cf-result-badge">Loaded</div>
+            </div>
+            <div class="cf-result">
+              <div class="cf-result-icon">⛳</div>
+              <div class="cf-result-info">
+                <div class="cf-result-name">Spyglass Hill Golf Course</div>
+                <div class="cf-result-sub">Pebble Beach, CA · 18 holes</div>
+              </div>
+            </div>
+            <div class="cf-result">
+              <div class="cf-result-icon">⛳</div>
+              <div class="cf-result-info">
+                <div class="cf-result-name">Monterey Peninsula CC</div>
+                <div class="cf-result-sub">Pebble Beach, CA · 18 holes</div>
+              </div>
+            </div>
+          </div>
+          <div class="cf-tee-row">
+            <span class="cf-tee-label">Select tee:</span>
+            <div class="cf-tee-chips">
+              <div class="cf-tee-chip cf-tee-black">Black</div>
+              <div class="cf-tee-chip cf-tee-blue cf-tee-selected">Blue</div>
+              <div class="cf-tee-chip cf-tee-white">White</div>
+              <div class="cf-tee-chip cf-tee-red">Red</div>
+            </div>
+          </div>
+          <div class="cf-start-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Start Round
+          </div>
+        </div>
+        <div class="cf-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Start Round with Scorecard Upload spotlight ── -->
+  <section class="spotlight" id="start-round">
+    <div class="container spotlight-inner">
+      <div class="spotlight-visual start-round-visual" data-animate>
+        <div class="sr-card">
+          <div class="sr-header">
+            <div class="sr-back">←</div>
+            <div class="sr-title">Start a Round</div>
+          </div>
+          <div class="sr-course-row">
+            <div class="sr-course-icon">📍</div>
+            <div class="sr-course-info">
+              <div class="sr-course-name">Augusta National GC</div>
+              <div class="sr-course-sub">Augusta, GA · Holes loaded</div>
+            </div>
+            <div class="sr-course-check">✓</div>
+          </div>
+          <div class="sr-tee-section">
+            <div class="sr-section-label">TEE BOX</div>
+            <div class="sr-tee-chips">
+              <div class="sr-chip">Masters</div>
+              <div class="sr-chip sr-chip-active">Member</div>
+              <div class="sr-chip">Guest</div>
+            </div>
+          </div>
+          <div class="sr-holes-preview">
+            <div class="sr-section-label">PREVIEW · MEMBER TEES</div>
+            <div class="sr-hole-row sr-hole-header"><span>Hole</span><span>Par</span><span>Yds</span><span>HCP</span></div>
+            <div class="sr-hole-row"><span>1</span><span>4</span><span>445</span><span>11</span></div>
+            <div class="sr-hole-row"><span>2</span><span>5</span><span>575</span><span>13</span></div>
+            <div class="sr-hole-row sr-hole-faded"><span>···</span><span></span><span></span><span></span></div>
+          </div>
+          <div class="sr-cta-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Tee Off
+          </div>
+        </div>
+        <div class="sr-upload-nudge" data-animate data-delay="350">
+          <span>📷</span>
+          <div>
+            <div class="sr-nudge-title">New course? Upload scorecard</div>
+            <div class="sr-nudge-sub">AI fills all 18 holes in seconds</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spotlight-content" data-animate data-delay="150">
+        <div class="section-eyebrow">Start a Round</div>
+        <h2 class="section-title">From course<br/>selection to<br/><span class="text-gradient">first tee</span></h2>
+        <p class="section-sub" style="text-align:left">The Start Round screen pulls everything together. Select your course, choose your tees, preview the hole layout — and tee off in under a minute. No scorecard? The OCR upload prompt appears automatically.</p>
+        <ul class="spotlight-list">
+          <li>
+            <div class="spotlight-list-icon">🗺️</div>
+            <div>
+              <strong>Smart course selection</strong>
+              <span>Type a name or tap location — the app finds your course and loads tee data instantly.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon">🏷️</div>
+            <div>
+              <strong>Tee box chooser</strong>
+              <span>All available tees shown as chips — course rating and slope update when you switch.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon">📷</div>
+            <div>
+              <strong>Upload prompt when needed</strong>
+              <span>If the course isn't in the database, a single tap opens the scorecard camera — no dead ends.</span>
+            </div>
+          </li>
+          <li>
+            <div class="spotlight-list-icon">👥</div>
+            <div>
+              <strong>Invite friends before teeing off</strong>
+              <span>Add up to 3 playing partners before you hit your first shot. They get a push notification immediately.</span>
+            </div>
+          </li>
+        </ul>
+        <a href="#download" class="btn btn-primary" style="margin-top:12px">Download &amp; play →</a>
       </div>
     </div>
   </section>

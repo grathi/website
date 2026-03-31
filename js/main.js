@@ -199,6 +199,64 @@
 
 
   /* ----------------------------------------------------------
+     OCR Demo: reveal rows when card enters viewport
+  ---------------------------------------------------------- */
+  const ocrCard = document.querySelector('.ocr-demo-card');
+  if (ocrCard && 'IntersectionObserver' in window) {
+    const ocrObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.ocr-grid-row').forEach((row, i) => {
+              setTimeout(() => {
+                row.style.opacity = '1';
+                row.style.transform = 'none';
+              }, i * 130);
+            });
+            ocrObs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    ocrObs.observe(ocrCard);
+  }
+
+
+  /* ----------------------------------------------------------
+     Course Finder demo: tee chip selection
+  ---------------------------------------------------------- */
+  document.querySelectorAll('.cf-tee-chip').forEach(chip => {
+    chip.addEventListener('click', function () {
+      const siblings = this.closest('.cf-tee-chips').querySelectorAll('.cf-tee-chip');
+      siblings.forEach(s => s.classList.remove('cf-tee-selected'));
+      this.classList.add('cf-tee-selected');
+    });
+  });
+
+  /* Course Finder demo: result row selection */
+  document.querySelectorAll('.cf-result').forEach(result => {
+    result.addEventListener('click', function () {
+      const siblings = this.closest('.cf-result-list').querySelectorAll('.cf-result');
+      siblings.forEach(s => s.classList.remove('cf-result-active'));
+      this.classList.add('cf-result-active');
+    });
+  });
+
+
+  /* ----------------------------------------------------------
+     Start Round demo: tee chip selection
+  ---------------------------------------------------------- */
+  document.querySelectorAll('.sr-chip').forEach(chip => {
+    chip.addEventListener('click', function () {
+      const siblings = this.closest('.sr-tee-chips').querySelectorAll('.sr-chip');
+      siblings.forEach(s => s.classList.remove('sr-chip-active'));
+      this.classList.add('sr-chip-active');
+    });
+  });
+
+
+  /* ----------------------------------------------------------
      App Store / Google Play buttons: ripple effect on click
   ---------------------------------------------------------- */
   document.querySelectorAll('.store-btn').forEach(btn => {
